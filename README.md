@@ -8,7 +8,7 @@ Our DRUG-CrossNER project is focused on the detection of "drug" entities in Dark
 ## Project Execution
 The experiments from the original work TODO{CITE original Master thesis} can be run with the following scripts.
 
-please install a Conda envrionment with our "requirements.txt" by 
+please install a Conda envrionment with python=3.6 with our "requirements.txt" by 
 
 ```console
 conda create --name <env> --file requirements.txt
