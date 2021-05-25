@@ -1,0 +1,182 @@
+INFO - 01/11/21 14:00:02 - 0:00:00 - ============ Initialized logger ============
+INFO - 01/11/21 14:00:02 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_pretrain_then_finetune\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_pretrain_then_finetune
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     num_tag: 29
+                                     seed: 555
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 01/11/21 14:00:02 - 0:00:00 - The experiment will be stored in experiments\ai_pretrain_then_finetune\1
+                                     
+INFO - 01/11/21 14:00:02 - 0:00:00 - Load training set data
+INFO - 01/11/21 14:00:03 - 0:00:00 - Load development set data
+INFO - 01/11/21 14:00:03 - 0:00:01 - Load test set data
+INFO - 01/11/21 14:00:04 - 0:00:02 - label distribution for training set
+INFO - 01/11/21 14:00:04 - 0:00:02 - {'product': 0.10902255639097744, 'field': 0.07330827067669173, 'task': 0.11278195488721804, 'researcher': 0.10150375939849623, 'university': 0.06015037593984962, 'programlang': 0.046992481203007516, 'algorithm': 0.15037593984962405, 'misc': 0.08082706766917293, 'metrics': 0.05075187969924812, 'organisation': 0.09022556390977443, 'conference': 0.045112781954887216, 'country': 0.05451127819548872, 'location': 0.013157894736842105, 'person': 0.011278195488721804}
+INFO - 01/11/21 14:00:04 - 0:00:02 - label distribution for dev set
+INFO - 01/11/21 14:00:04 - 0:00:02 - {'metrics': 0.09502262443438914, 'algorithm': 0.11506140917905623, 'misc': 0.11635423400129283, 'person': 0.026502908855850032, 'product': 0.11182934712346478, 'organisation': 0.060762766645119586, 'task': 0.09437621202327084, 'university': 0.03813833225597932, 'conference': 0.057530704589528116, 'researcher': 0.09179056237879767, 'field': 0.11441499676793794, 'programlang': 0.02262443438914027, 'country': 0.028442146089204912, 'location': 0.027149321266968326}
+INFO - 01/11/21 14:00:04 - 0:00:02 - label distribution for test set
+INFO - 01/11/21 14:00:04 - 0:00:02 - {'algorithm': 0.09806094182825485, 'conference': 0.05152354570637119, 'misc': 0.10027700831024931, 'product': 0.10969529085872576, 'task': 0.12077562326869806, 'field': 0.11357340720221606, 'metrics': 0.10581717451523545, 'organisation': 0.08033240997229917, 'researcher': 0.0886426592797784, 'programlang': 0.0332409972299169, 'country': 0.02437673130193906, 'location': 0.021052631578947368, 'person': 0.0371191135734072, 'university': 0.01551246537396122}
+INFO - 01/11/21 14:00:04 - 0:00:02 - train size: 100; dev size 350; test size: 431;
+DEBUG - 01/11/21 14:00:04 - 0:00:02 - Starting new HTTPS connection (1): huggingface.co:443
+DEBUG - 01/11/21 14:00:05 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 01/11/21 14:00:05 - 0:00:03 - Starting new HTTPS connection (1): huggingface.co:443
+DEBUG - 01/11/21 14:00:05 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/pytorch_model.bin HTTP/1.1" 302 0
+DEBUG - 01/11/21 14:00:05 - 0:00:03 - Attempting to acquire lock 1493729774448 on C:\Users\bogenspergerj/.cache\torch\transformers\092cc582560fc3833e556b3f833695c26343cb54b7e88cd02d40821462a74999.1f48cab6c959fc6c360d22bea39d06959e90f5b002e77e836d2da45464875cda.lock
+INFO - 01/11/21 14:00:05 - 0:00:03 - Lock 1493729774448 acquired on C:\Users\bogenspergerj/.cache\torch\transformers\092cc582560fc3833e556b3f833695c26343cb54b7e88cd02d40821462a74999.1f48cab6c959fc6c360d22bea39d06959e90f5b002e77e836d2da45464875cda.lock
+DEBUG - 01/11/21 14:00:05 - 0:00:03 - Starting new HTTPS connection (1): cdn-lfs.huggingface.co:443
+DEBUG - 01/11/21 14:00:06 - 0:00:04 - https://cdn-lfs.huggingface.co:443 "GET /bert-base-cased/d6992b8cd27d7a132eafce6a8210272329a371b1c762d453588795dd3835593e HTTP/1.1" 200 435779157
+DEBUG - 01/11/21 14:00:14 - 0:00:12 - Attempting to release lock 1493729774448 on C:\Users\bogenspergerj/.cache\torch\transformers\092cc582560fc3833e556b3f833695c26343cb54b7e88cd02d40821462a74999.1f48cab6c959fc6c360d22bea39d06959e90f5b002e77e836d2da45464875cda.lock
+INFO - 01/11/21 14:00:14 - 0:00:12 - Lock 1493729774448 released on C:\Users\bogenspergerj/.cache\torch\transformers\092cc582560fc3833e556b3f833695c26343cb54b7e88cd02d40821462a74999.1f48cab6c959fc6c360d22bea39d06959e90f5b002e77e836d2da45464875cda.lock
+INFO - 01/11/21 14:09:04 - 0:00:00 - ============ Initialized logger ============
+INFO - 01/11/21 14:09:04 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_pretrain_then_finetune\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_pretrain_then_finetune
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     num_tag: 29
+                                     seed: 555
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 01/11/21 14:09:04 - 0:00:00 - The experiment will be stored in experiments\ai_pretrain_then_finetune\1
+                                     
+INFO - 01/11/21 14:09:04 - 0:00:00 - Load training set data
+INFO - 01/11/21 14:09:05 - 0:00:01 - Load development set data
+INFO - 01/11/21 14:09:09 - 0:00:05 - Load test set data
+INFO - 01/11/21 14:09:12 - 0:00:08 - label distribution for training set
+INFO - 01/11/21 14:09:12 - 0:00:08 - {'product': 0.10902255639097744, 'field': 0.07330827067669173, 'task': 0.11278195488721804, 'researcher': 0.10150375939849623, 'university': 0.06015037593984962, 'programlang': 0.046992481203007516, 'algorithm': 0.15037593984962405, 'misc': 0.08082706766917293, 'metrics': 0.05075187969924812, 'organisation': 0.09022556390977443, 'conference': 0.045112781954887216, 'country': 0.05451127819548872, 'location': 0.013157894736842105, 'person': 0.011278195488721804}
+INFO - 01/11/21 14:09:12 - 0:00:08 - label distribution for dev set
+INFO - 01/11/21 14:09:12 - 0:00:08 - {'metrics': 0.09502262443438914, 'algorithm': 0.11506140917905623, 'misc': 0.11635423400129283, 'person': 0.026502908855850032, 'product': 0.11182934712346478, 'organisation': 0.060762766645119586, 'task': 0.09437621202327084, 'university': 0.03813833225597932, 'conference': 0.057530704589528116, 'researcher': 0.09179056237879767, 'field': 0.11441499676793794, 'programlang': 0.02262443438914027, 'country': 0.028442146089204912, 'location': 0.027149321266968326}
+INFO - 01/11/21 14:09:12 - 0:00:08 - label distribution for test set
+INFO - 01/11/21 14:09:12 - 0:00:08 - {'algorithm': 0.09806094182825485, 'conference': 0.05152354570637119, 'misc': 0.10027700831024931, 'product': 0.10969529085872576, 'task': 0.12077562326869806, 'field': 0.11357340720221606, 'metrics': 0.10581717451523545, 'organisation': 0.08033240997229917, 'researcher': 0.0886426592797784, 'programlang': 0.0332409972299169, 'country': 0.02437673130193906, 'location': 0.021052631578947368, 'person': 0.0371191135734072, 'university': 0.01551246537396122}
+INFO - 01/11/21 14:09:12 - 0:00:08 - train size: 100; dev size 350; test size: 431;
+DEBUG - 01/11/21 14:09:12 - 0:00:08 - Starting new HTTPS connection (1): huggingface.co:443
+DEBUG - 01/11/21 14:09:13 - 0:00:09 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 01/11/21 14:09:13 - 0:00:09 - Starting new HTTPS connection (1): huggingface.co:443
+DEBUG - 01/11/21 14:09:13 - 0:00:09 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/pytorch_model.bin HTTP/1.1" 302 0
+INFO - 01/11/21 14:10:27 - 0:00:00 - ============ Initialized logger ============
+INFO - 01/11/21 14:10:27 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_pretrain_then_finetune\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_pretrain_then_finetune
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     num_tag: 29
+                                     seed: 555
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 01/11/21 14:10:27 - 0:00:00 - The experiment will be stored in experiments\ai_pretrain_then_finetune\1
+                                     
+INFO - 01/11/21 14:10:27 - 0:00:00 - Load training set data
+INFO - 01/11/21 14:10:27 - 0:00:00 - Load development set data
+INFO - 01/11/21 14:10:28 - 0:00:01 - Load test set data
+INFO - 01/11/21 14:10:29 - 0:00:02 - label distribution for training set
+INFO - 01/11/21 14:10:29 - 0:00:02 - {'product': 0.10902255639097744, 'field': 0.07330827067669173, 'task': 0.11278195488721804, 'researcher': 0.10150375939849623, 'university': 0.06015037593984962, 'programlang': 0.046992481203007516, 'algorithm': 0.15037593984962405, 'misc': 0.08082706766917293, 'metrics': 0.05075187969924812, 'organisation': 0.09022556390977443, 'conference': 0.045112781954887216, 'country': 0.05451127819548872, 'location': 0.013157894736842105, 'person': 0.011278195488721804}
+INFO - 01/11/21 14:10:29 - 0:00:02 - label distribution for dev set
+INFO - 01/11/21 14:10:29 - 0:00:02 - {'metrics': 0.09502262443438914, 'algorithm': 0.11506140917905623, 'misc': 0.11635423400129283, 'person': 0.026502908855850032, 'product': 0.11182934712346478, 'organisation': 0.060762766645119586, 'task': 0.09437621202327084, 'university': 0.03813833225597932, 'conference': 0.057530704589528116, 'researcher': 0.09179056237879767, 'field': 0.11441499676793794, 'programlang': 0.02262443438914027, 'country': 0.028442146089204912, 'location': 0.027149321266968326}
+INFO - 01/11/21 14:10:29 - 0:00:02 - label distribution for test set
+INFO - 01/11/21 14:10:29 - 0:00:02 - {'algorithm': 0.09806094182825485, 'conference': 0.05152354570637119, 'misc': 0.10027700831024931, 'product': 0.10969529085872576, 'task': 0.12077562326869806, 'field': 0.11357340720221606, 'metrics': 0.10581717451523545, 'organisation': 0.08033240997229917, 'researcher': 0.0886426592797784, 'programlang': 0.0332409972299169, 'country': 0.02437673130193906, 'location': 0.021052631578947368, 'person': 0.0371191135734072, 'university': 0.01551246537396122}
+INFO - 01/11/21 14:10:29 - 0:00:02 - train size: 100; dev size 350; test size: 431;
+DEBUG - 01/11/21 14:10:29 - 0:00:02 - Starting new HTTPS connection (1): huggingface.co:443
+DEBUG - 01/11/21 14:10:29 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 01/11/21 14:10:29 - 0:00:02 - Starting new HTTPS connection (1): huggingface.co:443
+DEBUG - 01/11/21 14:10:30 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/pytorch_model.bin HTTP/1.1" 302 0
+INFO - 01/11/21 14:10:44 - 0:00:00 - ============ Initialized logger ============
+INFO - 01/11/21 14:10:44 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_pretrain_then_finetune\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_pretrain_then_finetune
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     num_tag: 29
+                                     seed: 555
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 01/11/21 14:10:44 - 0:00:00 - The experiment will be stored in experiments\ai_pretrain_then_finetune\1
+                                     
+INFO - 01/11/21 14:10:44 - 0:00:00 - Load training set data
+INFO - 01/11/21 14:10:44 - 0:00:01 - Load development set data
+INFO - 01/11/21 14:10:47 - 0:00:03 - Load test set data
+INFO - 01/11/21 14:10:50 - 0:00:06 - label distribution for training set
+INFO - 01/11/21 14:10:50 - 0:00:06 - {'product': 0.10902255639097744, 'field': 0.07330827067669173, 'task': 0.11278195488721804, 'researcher': 0.10150375939849623, 'university': 0.06015037593984962, 'programlang': 0.046992481203007516, 'algorithm': 0.15037593984962405, 'misc': 0.08082706766917293, 'metrics': 0.05075187969924812, 'organisation': 0.09022556390977443, 'conference': 0.045112781954887216, 'country': 0.05451127819548872, 'location': 0.013157894736842105, 'person': 0.011278195488721804}
+INFO - 01/11/21 14:10:50 - 0:00:06 - label distribution for dev set
+INFO - 01/11/21 14:10:50 - 0:00:06 - {'metrics': 0.09502262443438914, 'algorithm': 0.11506140917905623, 'misc': 0.11635423400129283, 'person': 0.026502908855850032, 'product': 0.11182934712346478, 'organisation': 0.060762766645119586, 'task': 0.09437621202327084, 'university': 0.03813833225597932, 'conference': 0.057530704589528116, 'researcher': 0.09179056237879767, 'field': 0.11441499676793794, 'programlang': 0.02262443438914027, 'country': 0.028442146089204912, 'location': 0.027149321266968326}
+INFO - 01/11/21 14:10:50 - 0:00:06 - label distribution for test set
+INFO - 01/11/21 14:10:50 - 0:00:06 - {'algorithm': 0.09806094182825485, 'conference': 0.05152354570637119, 'misc': 0.10027700831024931, 'product': 0.10969529085872576, 'task': 0.12077562326869806, 'field': 0.11357340720221606, 'metrics': 0.10581717451523545, 'organisation': 0.08033240997229917, 'researcher': 0.0886426592797784, 'programlang': 0.0332409972299169, 'country': 0.02437673130193906, 'location': 0.021052631578947368, 'person': 0.0371191135734072, 'university': 0.01551246537396122}
+INFO - 01/11/21 14:10:50 - 0:00:06 - train size: 100; dev size 350; test size: 431;
+DEBUG - 01/11/21 14:10:50 - 0:00:06 - Starting new HTTPS connection (1): huggingface.co:443
+DEBUG - 01/11/21 14:10:50 - 0:00:07 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 01/11/21 14:10:50 - 0:00:07 - Starting new HTTPS connection (1): huggingface.co:443
+DEBUG - 01/11/21 14:10:51 - 0:00:07 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/pytorch_model.bin HTTP/1.1" 302 0

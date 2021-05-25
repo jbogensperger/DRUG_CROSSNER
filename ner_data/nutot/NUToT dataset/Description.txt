@@ -1,0 +1,10 @@
+NUToT Dataset (Noisy User-generated Text on Tor)
+
+
+Name: Noisy User-generated Text on Tor
+
+Acronym: NUToT
+
+Description: The data is annotated for Named Entity Recognition (NER) task, and it involves six categories: Person, Location, Group, Creative work, Corporation, and Product. The Text comes from the domains of two categories of DUTA dataset (DUTA DATASET: http://gvis.unileon.es/dataset/duta-darknet-usage-text-addresses/). They are Drugs and Weapons.  The dataset has 851 Sentences with 1200 named entities.
+
+The dataset is also available on our group website: http://gvis.unileon.es/dataset/nutot/
