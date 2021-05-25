@@ -1,3 +1,31 @@
+# DRUG-CrossNER
+
+This project is an adaptation of the original CrossNER implementation. All further information about the original Project, paper citation etc. can be found in the next section.
+
+Our DRUG-CrossNER project is focused on the detection of "drug" entities in Darknet Markets. Therefore we created our own Drug-NER dataset with over 3.500 item listings from the Dreammarket. 
+
+
+##Project Execution
+The experiments from the original work TODO{CITE original Master thesis} can be run with the following scripts.
+
+please install a Conda envrionment with our Requirements.txt TODO{Create Requirements.TXT}
+
+First off, the Language models have to be fine-tuned via the shell script "fine_tune_Language_Models.sh".
+
+Afterwards the general BERT/RoBERTa Baselines for NER with a linear layer and dropout can be run via:
+
+- "exp_design_eval_LM_part1.sh" and "exp_design_eval_LM_part2.sh" for the full training dataset.
+- "exp_design_LM_fewShot_part1.sh" and "exp_design_LM_fewShot_part2.sh" for the FewShot scenario with using only 100 samples from the training dataset.
+
+## Dataset
+
+The dataset for drug detection needs to be placed in "ner_data/drugs". Currently there are only place-holder files with a few examples present. For accessing the full dataset please contact TODO{NAME Contact}
+
+
+
+
+
+
 # CrossNER
 <img src="imgs/pytorch-logo-dark.png" width="10%"> [![](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
