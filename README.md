@@ -1,6 +1,6 @@
 # DRUG-CrossNER
 
-This project is an adaptation of the original CrossNER implementation. All further information about the original Project, paper citation etc. can be found in the next section.
+This project is an adaptation of the original CrossNER implementation ( https://github.com/zliucr/CrossNER ). All further information about the original Project, paper citation etc. can be found in the next section.
 
 Our DRUG-CrossNER project is focused on the detection of "drug" entities in Darknet Markets. Therefore we created our own Drug-NER dataset with over 3.500 item listings from the Dreammarket. 
 
@@ -17,7 +17,7 @@ Afterwards the general BERT/RoBERTa Baselines for NER with a linear layer and dr
 - "exp_design_eval_LM_part1.sh" and "exp_design_eval_LM_part2.sh" for the full training dataset.
 - "exp_design_LM_fewShot_part1.sh" and "exp_design_LM_fewShot_part2.sh" for the FewShot scenario with using only 100 samples from the training dataset.
 
-## Dataset
+## Drug NER Dataset
 
 The dataset for drug detection needs to be placed in "ner_data/drugs". Currently there are only place-holder files with a few examples present. For accessing the full dataset please contact TODO{NAME Contact}
 
@@ -49,27 +49,7 @@ You can have [**a quick overview of this paper**](https://zihanliu1026.medium.co
 }
 </pre>
 
-### The CrossNER Dataset
 
-#### Data Statistics and Entity Categories
-Data statistics of unlabeled domain corpora, labeled NER samples and entity categories for each domain.
-
-<img src="imgs/datastatistics.png" width=100%/>
-
-#### Data Examples
-Data examples for the collected five domains. Each domain has its specialized entity categories.
-
-<img src="imgs/examples_v2.png" width=100%/>
-
-#### Domain Overlaps
-Vocabulary overlaps between domains (%). Reuters denotes the Reuters News domain, “Science” denotes the natural science domain and “Litera.” denotes the literature domain.
-
-<img src="imgs/domainoverlaps.png" width=50%/>
-
-#### Download
-```Labeled NER data:``` Labeled NER data for the five target domains (Politics, Science, Music, Literature, and AI) and the source domain (Reuters News from [CoNLL-2003 shared task](https://arxiv.org/pdf/cs/0306050.pdf)) can be found in ner_data folder.
-
-```Unlabeled Corpora:``` Unlabeled domain-related corpora (domain-level, entity-level, task-level and integrated) for the five target domains can be downloaded [here](https://drive.google.com/drive/folders/1xDAaTwruESNmleuIsln7IaNleNsYlHGn?usp=sharing).
 
 ### Dependency
 - Install PyTorch (Tested in PyTorch 1.2.0 and Python 3.6)
