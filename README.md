@@ -8,14 +8,23 @@ Our DRUG-CrossNER project is focused on the detection of "drug" entities in Dark
 ## Project Execution
 The experiments from the original work TODO{CITE original Master thesis} can be run with the following scripts.
 
-please install a Conda envrionment with our Requirements.txt TODO{Create Requirements.TXT}
+please install a Conda envrionment with our "requirements.txt" by 
 
-First off, the Language models have to be fine-tuned via the shell script "fine_tune_Language_Models.sh".
+```console
+conda create --name <env> --file requirements.txt
+```
+
+Activate the conda envirnoment and the Language models can be fine-tuned via the shell script "fine_tune_Language_Models.sh".
 
 Afterwards the general BERT/RoBERTa Baselines for NER with a linear layer and dropout can be run via:
 
 - "exp_design_eval_LM_part1.sh" and "exp_design_eval_LM_part2.sh" for the full training dataset.
 - "exp_design_LM_fewShot_part1.sh" and "exp_design_LM_fewShot_part2.sh" for the FewShot scenario with using only 100 samples from the training dataset.
+
+The Task adaption experiments can be run via:
+- "exp_design_full_transfer.sh" - for the full trainin dataset.
+- "exp_design_fewShot_transfer.sh" - for the FewShot scenario.
+
 
 ## Drug NER Dataset
 
