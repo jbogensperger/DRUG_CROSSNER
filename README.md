@@ -39,22 +39,40 @@ Finally please install transformers==3.5.1
 ```console
 pip install transformers==3.5.1
 ```
+## Test environment
 
-Now, the Language models can be fine-tuned via the shell script "fine_tune_Language_Models.sh".
+one may want to test their set-up via the command
+```console
+python main.py --exp_name transfer --exp_id 1  --num_tag 3  --tgt_dm drugs  --src_dm drugs     --batch_size 4   --epoch 5
+```
 
-Afterwards the general BERT/RoBERTa Baselines for NER with a linear layer and dropout can be run via:
+## Fine-Tune Language Models / Domain adaptation
+The Language models can be fine-tuned via the shell script "fine_tune_Language_Models.sh". This means we fine-tune BERT/RoBERTa to the target domain by using their specific learning tasks on text corpora from darknet markets and wikipedia articles about illicit drugs.
+
+## Drug NER Dataset
+Before starting with real experiments, you need to replace the sample entries for the drug domain in "ner_data/drugs" ("train.txt", "dev.txt", "test.txt") with the real full-size dataset. Currently there are only place-holder files with a few examples present. 
+
+The dataset is currently only available via my github Address or an email to JBogen@gmx.at. You need to provide sufficient evidence to show your research interest for gaining access.
+
+Once one has gained access to the dataset (3 files -train/dev/test.txt) it needs to be placed in "ner_data/drugs/". 
+
+
+
+
+## Hyperparameter Tuning / creation of Baselines
+After replacing the DRUG sample dataset with the real dataset, the general BERT/RoBERTa Baselines for Named Entity Recognition with a single linear layer and dropout can be run via:
 
 - "exp_design_eval_LM_part1.sh" and "exp_design_eval_LM_part2.sh" for the full training dataset.
 - "exp_design_LM_fewShot_part1.sh" and "exp_design_LM_fewShot_part2.sh" for the FewShot scenario with using only 100 samples from the training dataset.
+
+## Task Adaptation
 
 The Task adaption experiments can be run via:
 - "exp_design_full_transfer.sh" - for the full trainin dataset.
 - "exp_design_fewShot_transfer.sh" - for the FewShot scenario.
 
 
-## Drug NER Dataset
 
-The dataset for drug detection needs to be placed in "ner_data/drugs". Currently there are only place-holder files with a few examples present. For accessing the full dataset please contact TODO{NAME Contact}
 
 
 
