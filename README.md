@@ -13,13 +13,14 @@ please install a Conda envrionment with python=3.6 and activate it to install py
 ```console
 conda create --name <env> python=3.6
 ```
-And get Torch 1.7.1 from https://pytorch.org/get-started/previous-versions/ with the Cuda version you need:
+And get Torch 1.7.1 via an install command from https://pytorch.org/get-started/previous-versions/ with the Cuda version you have on your server:
 
 ```console
 #An example for CUDA 11.0
 pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
-
-#Or Any other like:
+```
+Alternative install commands for older Cuda Versions can be found (use only the command for YOUR cuda version).
+```console
 # CUDA 10.2
 pip install torch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2
 
@@ -38,9 +39,6 @@ Finally please install transformers==3.5.1
 ```console
 pip install transformers==3.5.1
 ```
-
-If you would like to use the streamlit app and other stuff you may want to install other dependencies via the provided yml file. Attention, this does not substitute for the proper PyTorch installation above!
-
 
 Now, the Language models can be fine-tuned via the shell script "fine_tune_Language_Models.sh".
 
