@@ -79,7 +79,7 @@ The Task adaption experiments can be run via:
 
 
 
-## CrossNER
+## Information from the original CrossNER paper (condensed, the original info is longer)
 <img src="imgs/pytorch-logo-dark.png" width="10%"> [![](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <img align="right" src="imgs/HKUST.jpg" width="12%">
