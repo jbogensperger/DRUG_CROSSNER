@@ -48,7 +48,7 @@ python main.py --exp_name transfer --exp_id 1  --num_tag 3  --tgt_dm drugs  --sr
 
 ## Fine-Tune Language Models / Domain adaptation
 
-BEFORE you can run all models, you need to fine-tune the language models! This will require the biggest part of the computing power.
+BEFORE you can run all models, you need to fine-tune the language models! This will require the biggest part of the computing power. If you want to use exactly the models we used we provided the release with tag1.0 where a zip file with the language model folder with our binaries is included. just unpack the "LMs" folder directly in your project folder.
 
 The Language models can be fine-tuned via the shell script "fine_tune_Language_Models.sh". This means we fine-tune BERT/RoBERTa to the target domain by using their specific learning tasks on text corpora from darknet markets and wikipedia articles about illicit drugs.
 
