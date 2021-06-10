@@ -2,13 +2,13 @@
 if [ -f "LMs/ROBERTA/Dreammarket/pytorch_model.bin" ] && [ -f "LMs/ROBERTA/Grams/pytorch_model.bin" ] && [ -f "LMs/ROBERTA/Wiki/pytorch_model.bin" ] && [ -f "LMs/ROBERTA/All/pytorch_model.bin" ]; then
     echo "$Roberta Language Models exist."
 else 
-    echo "Roberta Language model files are missing. please run "
+    echo "Roberta Language model files are missing. please run fine_tune_Language_Models.sh"
 	exit
 fi
 if [ -f "LMs/BERT/Dreammarket/pytorch_model.bin" ] && [ -f "LMs/BERT/Grams/pytorch_model.bin" ] && [ -f "LMs/BERT/Wiki/pytorch_model.bin" ] && [ -f "LMs/BERT/All/pytorch_model.bin" ] ; then
     echo "$BERT Language Models exist."
 else 
-    echo "BERT Language model files are missing. please run "
+    echo "BERT Language model files are missing. please run fine_tune_Language_Models.sh"
 	exit
 fi
 
