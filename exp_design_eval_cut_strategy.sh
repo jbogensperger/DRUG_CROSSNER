@@ -15,13 +15,13 @@ fi
 
 
 #Cut Strategy 1
-python main.py --exp_name Cut_strat_eval --exp_id 1 --num_tag 3 --model_name roberta-base --ckpt LMs/ROBERTA/All/pytorch_model.bin --tgt_dm drugs --src_dm drugs --batch_size 4  --epoch 10 --dropout 0.1 --cut_strategy 1  && \ 
+python main.py --exp_name cut_strategy --exp_id 1 --num_tag 3 --model_name roberta-base --ckpt LMs/ROBERTA/All/pytorch_model.bin --tgt_dm drugs --src_dm drugs --batch_size 4  --epoch 10 --dropout 0.1 --cut_strategy 1  && \ 
 
 #Cut Strategy 1
-python main.py --exp_name LM_Exp_V5_long --exp_id 2 --num_tag 3 --model_name roberta-base --ckpt LMs/ROBERTA/All/pytorch_model.bin --tgt_dm drugs --src_dm drugs --batch_size 4  --epoch 10 --dropout 0.1 --cut_strategy 2  && \ 
+python main.py --exp_name cut_strategy --exp_id 2 --num_tag 3 --model_name roberta-base --ckpt LMs/ROBERTA/All/pytorch_model.bin --tgt_dm drugs --src_dm drugs --batch_size 4  --epoch 10 --dropout 0.1 --cut_strategy 2  && \ 
  
 #Cut Strategy 1
-python main.py --exp_name LM_Exp_V5_long --exp_id 3 --num_tag 3 --model_name roberta-base --ckpt LMs/ROBERTA/All/pytorch_model.bin --tgt_dm drugs --src_dm drugs --batch_size 4  --epoch 10 --dropout 0.1 --cut_strategy 3  && \ 
+python main.py --exp_name cut_strategy --exp_id 3 --num_tag 3 --model_name roberta-base --ckpt LMs/ROBERTA/All/pytorch_model.bin --tgt_dm drugs --src_dm drugs --batch_size 4  --epoch 10 --dropout 0.1 --cut_strategy 3  && \ 
  
 #Cut Strategy 1
-python main.py --exp_name LM_Exp_V5_long --exp_id 4 --num_tag 3 --model_name roberta-base --ckpt LMs/ROBERTA/All/pytorch_model.bin --tgt_dm drugs --src_dm drugs --batch_size 4  --epoch 10 --dropout 0.1 --cut_strategy 4  && \ 
+python main.py --exp_name cut_strategy --exp_id 4 --num_tag 3 --model_name roberta-base --ckpt LMs/ROBERTA/All/pytorch_model.bin --tgt_dm drugs --src_dm drugs --batch_size 4  --epoch 10 --dropout 0.1 --cut_strategy 4  && \ 
