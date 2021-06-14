@@ -80,12 +80,12 @@ python main.py --exp_name LM_Exp_few_V2 --exp_id 110 --num_tag 3 --ckpt LMs/BERT
 
 Best Model Full Training Set Scenario (RoBERTa fine-tuned on ALL texts and dropout=0.5:
 ```console
-python main.py --exp_name LM_Exp_V5 --exp_id 305 --num_tag 3 --model_name roberta-base --ckpt LMs/ROBERTA/All/pytorch_model.bin --tgt_dm drugs --src_dm drugs --batch_size 4  --epoch 5 --dropout 0.5 --cut_strategy 1
+python main.py --exp_name LM_Exp_V5_long --exp_id 225 --num_tag 3 --model_name roberta-base --ckpt LMs/ROBERTA/All/pytorch_model.bin --tgt_dm drugs --src_dm drugs --batch_size 4  --epoch 10 --dropout 0.1 --cut_strategy 1
 ```
 
 ## Task Adaptation
 
-The Task adaption experiments can be run via:
+The Task adaption experiments can be run via the scripts found in the folder superseded_shell_scripts, since it was only relevant for the master thesis and not for the paper:
 - "exp_design_full_transfer.sh" - for the full trainin dataset.
 - "exp_design_fewShot_transfer.sh" - for the FewShot scenario.
 
