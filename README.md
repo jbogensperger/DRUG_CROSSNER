@@ -55,7 +55,7 @@ The Language models can be fine-tuned via the shell script "fine_tune_Language_M
 ## Drug NER Dataset
 Before starting with real experiments, you need to replace the sample entries for the drug domain in "ner_data/drugs" ("train.txt", "dev.txt", "test.txt") with the real full-size dataset. Currently there are only place-holder files with a few examples present. 
 
-The dataset is currently only available via my github Address or an email to JBogen@gmx.at. You need to provide sufficient evidence to show your research interest for gaining access.
+The dataset is currently only available via my github Address or an email to dreamdrugdataset@gmail.com. You need to provide sufficient evidence to show your research interest for gaining access.
 
 Once one has gained access to the dataset (3 files -train/dev/test.txt) it needs to be placed in "ner_data/drugs/". 
 
