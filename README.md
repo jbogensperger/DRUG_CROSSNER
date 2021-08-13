@@ -68,6 +68,7 @@ After replacing the DRUG sample dataset with the real dataset, the general BERT/
 - "exp_design_eval_LM_part1.sh" and "exp_design_eval_LM_part2.sh" for the full training dataset.
 - "exp_design_LM_fewShot_part1.sh" and "exp_design_LM_fewShot_part2.sh" for the FewShot scenario with using only 100 samples from the training dataset.
 
+Please note, that if you only want to use certain graphic cards with cuda, you will have to add that to the run commands in the shell scripts.. e.g. "CUDA_VISIBLE_DEVICES=1 python main.py --exp_name ...".
 
 ## Running the best models
 
