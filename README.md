@@ -89,7 +89,7 @@ The Task adaption experiments can be run via the scripts found in the folder sup
 - "exp_design_full_transfer.sh" - for the full trainin dataset.
 - "exp_design_fewShot_transfer.sh" - for the FewShot scenario.
 
-
+Please note, that if you only want to use certain graphic cards with cuda, you will have to add that to the run commands in the shell scripts.. e.g. "CUDA_VISIBLE_DEVICES=1 python main.py --exp_name ...".
 
 
 
